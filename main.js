@@ -46,7 +46,7 @@ function inflate() {
     height += inflationRate
     width += inflationRate
     checkBalloonPop()
-    draw()
+    draw()  
 }
 
 function checkBalloonPop(){
@@ -56,9 +56,9 @@ function checkBalloonPop(){
         balloonElement.classicList.remove(currentColor)
         getRandomColor()
         balloonElement.classList.add(currentColor)
-
+        
         document.getElementById("pop-sound").play()
-
+        
         currentPopCount++
         height = 40
         width = 0 
@@ -73,10 +73,10 @@ function getRandomColor(){
 function draw(){
     let balloonElement = document.getElementById("balloon")
     let clickCountElem = document.getElementById("click-count")
-    let popCountElem = document.getElementById("pop-count")
-    let highPopCountElem = document.getElementById("high-pop-count")
+    let popCountElem = document.getElementById('pop-count')
+    let highPopCountElem = document.getElementById('high-pop-count')
 
-    let playerNameElem = document.getElementById("player-name")
+    let playerNameElem = document.getElementById('player-name')
 
     balloonElement.style.height = height + "px"
     balloonElement.style.width = width + "px"
@@ -105,6 +105,7 @@ function stopGame(){
     }
 
     currentPopCount = 0
+    
     stopClock()
     draw()
     drawScoreboard()
@@ -155,7 +156,7 @@ function loadPlayers(){
 function drawScoreboard(){
     let template = ""
 
-    players.sort((p1, p2)=> p2.topScore - p1.topScore)
+    players.sort((p1, p2) => p2.topScore - p1.topScore)
 
     players.forEach(player => {
         template += `
